@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:text_gradiate/text_gradiate.dart';
+
 
 void main() {
   runApp(const MainApp());
@@ -13,14 +15,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Shader linearGradient = LinearGradient(
-    colors: <Color>[
-      Color.fromARGB(255, 83, 232, 139), 
-      Color.fromARGB(255, 21, 190, 119)
-    ],
-    ).createShader(
-      Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
-    );
 
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -32,13 +26,18 @@ class MainApp extends StatelessWidget {
 
               Image(image: AssetImage("assets/png/Logo.png"),),
               
-              Text("FoodNinja", style: 
-                TextStyle(
-                  fontFamily: 'Viga',
-                  fontSize: 40,
-                  foreground: Paint()..shader = linearGradient,
+              TextGradiate(
+                text: Text("FoodNinja", style: 
+                  TextStyle(
+                    fontFamily: 'Viga',
+                    fontSize: 40,
+                    ),
                   ),
-                ),
+                colors: <Color>[
+                  Color.fromARGB(255, 83, 232, 139), 
+                  Color.fromARGB(255, 21, 190, 119)
+                ],
+              ),
 
               Text("Deliever Favorite Food", style: 
                 TextStyle(
@@ -48,6 +47,7 @@ class MainApp extends StatelessWidget {
                   color: Color.fromARGB(255, 9, 5, 28),
                 ),
               ),
+
             ],
           ),
         )
