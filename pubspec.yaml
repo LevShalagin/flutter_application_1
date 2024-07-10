@@ -22,6 +22,8 @@ flutter:
   assets:
     - assets/png/Logo.png
     - assets/png/Pattern.png
+    - assets/png/google-icon.png
+    - assets/png/facebook-icon.png
   
   fonts:
     - family: "Viga"
@@ -31,3 +33,7 @@ flutter:
     - family: "Inter"
       fonts:
         - asset: assets/font/Inter-Regular.otf
+
+    - family: "BentonSans"
+      fonts:
+        - asset: assets/font/BentonSans Bold.otf
